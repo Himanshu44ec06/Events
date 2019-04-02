@@ -9,9 +9,13 @@ import  {  EventThumbnailComponent  }  from  './events/event-thumbnail/eventThum
 import  { EventDetailComponent } from  './events/event-detail/eventDetail.component'
 import  { CreateEventComponent } from  './events/create-event/createEvent.component'
 import  { EventService}   from  './events/shared/events.service'
+import  { EventRouteActivator }  from './events/event-detail/event-route-activator.service'
+
+import  { Error404Component }  from  './errors/404.component';
 
 import  { appRoutes} from './routes'
 import { RouterModule } from '@angular/router';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -20,14 +24,16 @@ import { RouterModule } from '@angular/router';
     EventListComponent,
     EventThumbnailComponent,
     EventDetailComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    EventService
+    EventService,
+    EventRouteActivator
   ],
   bootstrap: [AppComponent]
 })
