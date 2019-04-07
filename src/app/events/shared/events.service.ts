@@ -10,6 +10,17 @@ export class  EventService {
     getEvent(id:number) :  IEvent {
         return  EVENTS.find(event=> event.id == id);
     }
+
+    updateEvent(event:IEvent) : void {
+         var index  = EVENTS.findIndex(x=> x.id == event.id);
+         EVENTS[index] =  event;
+    }
+
+    addNewEvent(event:IEvent) :void {
+          event.sessions = [];
+          event.id = Math.floor(Math.random()*100);
+          EVENTS.push(event);
+    }
 }
 
 const EVENTS  : IEvent[] = [

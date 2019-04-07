@@ -16,6 +16,11 @@ import  { Error404Component }  from  './errors/404.component';
 import  { appRoutes} from './routes'
 import { RouterModule } from '@angular/router';
 import { from } from 'rxjs';
+import { AuthService } from './user/shared/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateSessionComponent } from './events/create-session/createSession.component';
+import { SessionListComponent } from './events/session-list/sessionList.component';
+import { CollapsibleWellComponent } from './common/collapsible-well/collapsibleWell.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +30,21 @@ import { from } from 'rxjs';
     EventThumbnailComponent,
     EventDetailComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent,
+    SessionListComponent,
+    CollapsibleWellComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
     EventService,
-    EventRouteActivator
+    EventRouteActivator,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
