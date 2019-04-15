@@ -21,6 +21,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './events/create-session/createSession.component';
 import { SessionListComponent } from './events/session-list/sessionList.component';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsibleWell.component';
+import  { JQ_Token }   from  './common/jquery.service';
+import { SimpleModalComponent } from './common/simple-modal/simpleModal.component';
+import { ModalTriggerDirective } from './common/modalTrigger.directive';
+import { UpVoteComponent } from './events/up-vote/upvote.component';
+
+let  jQuery = window['$']
 
 @NgModule({
   declarations: [
@@ -34,6 +40,9 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsibleW
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
+    SimpleModalComponent,
+    ModalTriggerDirective,
+    UpVoteComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +54,7 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsibleW
     EventService,
     EventRouteActivator,
     AuthService
+    
   ],
   bootstrap: [AppComponent]
 })
